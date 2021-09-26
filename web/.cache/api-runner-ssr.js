@@ -1,4 +1,10 @@
 var plugins = [{
+      plugin: require('/Users/alexandermclean/masterGatsby/web/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('/Users/alexandermclean/masterGatsby/web/node_modules/gatsby-source-sanity/gatsby-ssr'),
+      options: {"plugins":[],"projectId":"9tcxlg3m","dataset":"production","watchMode":true},
+    },{
       plugin: require('/Users/alexandermclean/masterGatsby/web/gatsby-ssr'),
       options: {"plugins":[]},
     }]
