@@ -1,0 +1,27 @@
+import { Link } from "gatsby";
+import React from "react";
+
+function SinglePizza({ pizza }) {
+  return (
+    <>
+      <Link to={`/pizza/${pizza.slug.current}`}>
+        <h2>
+          <span classname="mark">{pizza.name}</span>
+        </h2>
+        <p>{pizza.toppings.map((topping) => topping.name).join(", ")}</p>
+      </Link>
+    </>
+  );
+}
+
+export default function PizzaList({ pizzas }) {
+  return (
+    <>
+      {pizzas.map((pizza) => (
+        <p>
+          <SinglePizza key={pizza.id} pizza={pizza} />
+        </p>
+      ))}
+    </>
+  );
+}
