@@ -27,7 +27,7 @@ const PizzaStyles = styled.div`
 
 function SinglePizza({ pizza }) {
   return (
-    <PizzaStyles>
+    <PizzaStyles key={pizza.id}>
       <Link to={`/pizza/${pizza.slug.current}`}>
         <h2>
           <span className="mark">{pizza.name}</span>
@@ -43,7 +43,7 @@ export default function PizzaList({ pizzas }) {
   return (
     <PizzaGridStyles>
       {pizzas.map((pizza) => (
-        <SinglePizza key={pizza.id} pizza={pizza} />
+        <SinglePizza pizza={pizza} />
       ))}
     </PizzaGridStyles>
   );
