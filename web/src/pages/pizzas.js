@@ -1,6 +1,5 @@
 import { graphql } from "gatsby";
 import React from "react";
-import Nav from "../components/Nav";
 import PizzaList from "../components/PizzaList";
 import ToppingsFilter from "../components/ToppingsFilter";
 

@@ -1,10 +1,30 @@
-import React from 'react';
-import Nav from '../components/Nav';
+import React from "react";
+import { graphql } from "gatsby";
 
-export default function BeersPage() {
+import BeerList from "../components/BeerList";
+
+export default function BeersPage({ data }) {
+  const beers = data.beers.nodes;
   return (
     <>
-      <p>Beers!</p>
+      <BeerList beers={beers} />
     </>
   );
 }
+
+export const query = graphql`
+  query BeersQuery {
+    beers: allBeer {
+      nodes {
+        id
+        name
+        price
+        image
+        rating {
+          average
+          reviews
+        }
+      }
+    }
+  }
+`;
