@@ -75,7 +75,6 @@ async function fetchBeersAndTurnIntoNodes({
         contentDigest: createContentDigest(beer),
       },
     };
-    console.log({ ...beer });
     // 3. Create a node for that beer
     actions.createNode({
       ...beer,
