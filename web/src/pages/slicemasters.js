@@ -1,11 +1,12 @@
 import { graphql } from "gatsby";
 import React from "react";
+import SlicemasterList from "../components/SlicemasterList";
 
 export default function SlicemastersPage({ data }) {
-  const person = data.person.nodes;
+  const persons = data.person.nodes;
   return (
     <>
-      <p>slicemasters!</p>
+      <SlicemasterList persons={persons} />
     </>
   );
 }
