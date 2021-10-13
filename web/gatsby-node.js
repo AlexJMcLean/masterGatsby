@@ -69,6 +69,7 @@ async function fetchBeersAndTurnIntoNodes({
   const beers = await res.json();
   // 2. Loop over each one
   for (const beer of beers) {
+    if (!beer.rating.average) return;
     // create a node for each beer
     const nodeMeta = {
       id: createNodeId(`beer-${beer.name}`),
@@ -149,7 +150,6 @@ export async function createPages(params) {
   await Promise.all([
     turnPizzasIntoPages(params),
     turnToppingsIntoPages(params),
-    turnSlicemastersIntoPages(params),
   ]);
   // 1. Pizzas
   // 2. Toppings
