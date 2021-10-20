@@ -3,7 +3,7 @@ var plugins = [{
       options: {"plugins":[]},
     },{
       plugin: require('/Users/alexandermclean/masterGatsby/web/node_modules/gatsby-source-sanity/gatsby-ssr'),
-      options: {"plugins":[],"projectId":"9tcxlg3m","dataset":"production","watchMode":true},
+      options: {"plugins":[],"projectId":"9tcxlg3m","dataset":"production","watchMode":true,"token":"skeaf1d9CtDJzyXSkbbJxBo61fsrKGWPv5rIrItmhpqkgd3nfGdv0LaPIukNE1Y2DAUiMZKYw7GM48KX961nhntDgLZiskUZrcuChwozGZKFfqWtPNAGmdPv5IkMlfuyeCp4ryiAo3yRXZcxae0gX2OarggXQqqHNUCangHSj5vLkXfuiQvd"},
     },{
       plugin: require('/Users/alexandermclean/masterGatsby/web/gatsby-ssr'),
       options: {"plugins":[]},

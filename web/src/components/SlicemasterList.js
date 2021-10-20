@@ -40,7 +40,7 @@ function SingleSlicemaster({ person }) {
     <SlicemasterStyles key={person.id}>
       <Link to={`/slicemaster/${person.name}`}>
         <h2>
-          <span class="mark">{person.name}</span>
+          <span className="mark">{person.name}</span>
         </h2>
         <Img fluid={person.image.asset.fluid} alt={person.name} />
         <p>{person.description}</p>

@@ -89,7 +89,7 @@ async function fetchBeersAndTurnIntoNodes({
   }
 }
 
-async function turnSlicemastersIntoPages({ graphql, actions}) {
+async function turnSlicemastersIntoPages({ graphql, actions }) {
   // 1. Query List of all slicemasters
   const { data } = await graphql(`
     query {
@@ -106,23 +106,22 @@ async function turnSlicemastersIntoPages({ graphql, actions}) {
     }
   `);
   // 2. Create individual slicemasters pages
-    
+
   // 3. Find out how many pages we need to create
-  const pageSize = 6;
+  const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
   const numOfPages = Math.ceil(data.people.totalCount / pageSize);
   // 4. Loop over to create the pages
-  Array.from({ length: numOfPages }).forEach((_,i) => {
+  Array.from({ length: numOfPages }).forEach((_, i) => {
     actions.createPage({
       path: `/slicemasters/${i + 1}`,
-      component: path.resolve('./src/pages/slicemasters.js'),
+      component: path.resolve("./src/pages/slicemasters.js"),
       context: {
         skip: i * pageSize,
         currentPage: i + 1,
-        pageSize
-      }
-    })
-  })
-
+        pageSize,
+      },
+    });
+  });
 }
 
 export async function sourceNodes(params) {
