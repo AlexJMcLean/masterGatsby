@@ -106,7 +106,7 @@ async function turnSlicemastersIntoPages({ graphql, actions}) {
     }
   `);
   // 2. Create individual slicemasters pages
-
+    
   // 3. Find out how many pages we need to create
   const pageSize = 6;
   const numOfPages = Math.ceil(data.people.totalCount / pageSize);
