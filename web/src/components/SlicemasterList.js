@@ -38,7 +38,7 @@ const SlicemasterStyles = styled.div`
 function SingleSlicemaster({ person }) {
   return (
     <SlicemasterStyles key={person.id}>
-      <Link to={`/slicemaster/${person.name}`}>
+      <Link to={`/slicemasters/${person.slug.current}`}>
         <h2>
           <span className="mark">{person.name}</span>
         </h2>

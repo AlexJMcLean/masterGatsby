@@ -2,11 +2,13 @@ import { graphql } from "gatsby";
 import React from "react";
 import Pagination from "../components/Pagination";
 import SlicemasterList from "../components/SlicemasterList";
+import SEO from "../components/SEO";
 
 export default function SlicemastersPage({ data, pageContext }) {
   const persons = data.person.nodes;
   return (
     <>
+      <SEO title={`Slicemasters - Page ${pageContext.currentPage || 1}`} />
       <Pagination
         pageSize={parseInt(process.env.GATSBY_PAGE_SIZE)}
         skip={pageContext.skip}
@@ -33,6 +35,9 @@ export const query = graphql`
               ...GatsbySanityImageFluid
             }
           }
+        }
+        slug {
+          current
         }
       }
     }

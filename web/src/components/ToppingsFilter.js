@@ -69,8 +69,6 @@ export default function ToppingsFilter({ activeTopping }) {
     }
   `);
   const toppingsWithCounts = countPizzasInToppings(pizzas.nodes);
-  console.clear();
-  console.log(toppingsWithCounts);
 
   return (
     <ToppingsStyles>
